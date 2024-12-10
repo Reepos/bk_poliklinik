@@ -1,2 +1,2 @@
-# Project-CV.-Poli-Mitra-Sehat
+# Project poliklinik
 Aplikasi ini menggunakan Language PHP untuk CV. Poli Mitra Sehat
