@@ -97,11 +97,12 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`id`, `nama`, `alamat`, `no_hp`, `id_poli`, `nip`, `password`) VALUES
-(1, 'dr.Eka', 'jalanin', '081667789123', 1, 16782230, '$2y$10$i3Cc5D0xF7PblGi/Isg2G.4CfKf.3Uba9Z7tzBWm/rtrBzmRdHu9O'),
-(2, 'dr. vitarara', 'ngaliyan', '081678876543', 2, 16782231, '$2y$10$9SRJUYaBxAYZbJG2r7y0QO6StBI9HGDf/cEvlvxpMuNLqdC4HK0rK'),
-(3, 'dr. vita', 'jalanin saja', '087927482648', 6, 16782232, '$2y$10$tGPWtzC9heUptMPwXmrdZ.bGuD0TzLxbGOAo/wTnadJyJxcGBUVOm'),
-(4, 'dr. rara', 'ngaliyan', '081917789176', 7, 16782233, '$2y$10$c58mVulnkLXwXmUe5vEmde7AG1/3qf8Q2kmAmwdU3x0ccevO.ulbu'),
-(7, 'dr. ekavita', 'ngaliyan', '081917789179', 7, 16782234, '$2y$10$JPMNr/8bzs/9i6l543U1z.0UcVJCCDZH3C.PJQqSM5UteULrCGuce');
+(1, 'dr.Eka', 'jalanin', '081667789123', 1, 16782230, '$2y$10$YZVBubnJVx/.dK.5MwxyTO8nnJsGY7FFuk1R7dFxSFV71AydyCZSy'),
+(2, 'dr. vitarara', 'ngaliyan', '081678876543', 2, 16782231, '$2y$10$YZVBubnJVx/.dK.5MwxyTO8nnJsGY7FFuk1R7dFxSFV71AydyCZSy'),
+(3, 'dr. vita', 'jalanin saja', '087927482648', 6, 16782232, '$2y$10$YZVBubnJVx/.dK.5MwxyTO8nnJsGY7FFuk1R7dFxSFV71AydyCZSy'),
+(4, 'dr. rara', 'ngaliyan', '081917789176', 7, 16782233, '$2y$10$YZVBubnJVx/.dK.5MwxyTO8nnJsGY7FFuk1R7dFxSFV71AydyCZSy'),
+(7, 'dr. ekavita', 'ngaliyan', '081917789179', 7, 16782234, '$2y$10$YZVBubnJVx/.dK.5MwxyTO8nnJsGY7FFuk1R7dFxSFV71AydyCZSy');
+(8, 'calvin', 'ngaliyan', '81123333', 8, 144422, '$2y$10$YZVBubnJVx/.dK.5MwxyTO8nnJsGY7FFuk1R7dFxSFV71AydyCZSy');
 
 -- --------------------------------------------------------
 
@@ -256,6 +257,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
 (3, 'vita', '$2y$10$2j99cstm6b0Ch.z1mLzje.NTLjYHWZvQKXFn7ebS0EzN3jZc.W6iC');
+(4, 'reep', '$2y$10$oUpWPTcAGQmb8XqTKYp7jOZ9ydIE5k0gClLcSOlqnTOfBMp8JUC8y');
 
 --
 -- Indexes for dumped tables
