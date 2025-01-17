@@ -34,6 +34,26 @@
         } else {
             $stmt = $mysqli->prepare("INSERT INTO jadwal_periksa (id_dokter, hari, jam_mulai, jam_selesai, statues) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("isssi", $id_dokter, $hari, $jam_mulai, $jam_selesai, $statues);
+
+            // Validasi: Cek apakah hari praktik dokter sudah ada
+    if (!isset($_POST['id'])) { // Hanya berlaku untuk penambahan baru, bukan update
+        $cekJadwal = $mysqli->prepare("SELECT * FROM jadwal_periksa WHERE id_dokter = ? AND hari = ?");
+        $cekJadwal->bind_param("is", $id_dokter, $hari);
+        $cekJadwal->execute();
+        $result = $cekJadwal->get_result();
+
+        if ($result->num_rows > 0) {
+            echo "
+                <script>
+                    alert('Gagal menambah jadwal: Dokter sudah memiliki jadwal di hari yang sama.');
+                    document.location='berandaDokter.php?page=aturJadwalDokter';
+                </script>
+            ";
+            exit; // Hentikan eksekusi jika jadwal di hari yang sama sudah ada
+        }
+
+        $cekJadwal->close();
+    }
     
             if ($stmt->execute()) {
                 echo "
@@ -49,6 +69,7 @@
             $stmt->close();
         }
     }
+    
 
     if (isset($_GET['aksi'])) {
         if ($_GET['aksi'] == 'hapus') {
@@ -143,8 +164,8 @@
                         <label for="statues">Status <span class="text-danger">*</span></label>
                         <select class="form-select" name="statues" aria-label="statues">
                             <option value="" selected>Pilih Status...</option>
-                            <option value="1">1</option>
-                            <option value="0">0</option>
+                            <option value="1">active</option>
+                            <option value="0">inactive</option>
                         </select>
                     </div>
                     <div class="d-flex justify-content-end mt-2">
